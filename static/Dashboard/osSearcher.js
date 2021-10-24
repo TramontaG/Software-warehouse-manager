@@ -63,7 +63,7 @@ class OsSearcher {
 
     onNavigate() {
         this.openOs = DB.getEntities("os", (os) => os.status === "open");
-        this.closedOs = DB.getEntities("os", (os) => os.status === "closed");
+        this.closedOs = DB.getEntities("os", (os) => os.status === "done");
 
         osHolder.innerHTML = "";
         closedOsHolder.innerHTML = "";

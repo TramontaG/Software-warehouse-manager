@@ -45,7 +45,7 @@ body {
     color: white;
     width: calc(100% - 25ch);
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .header {
@@ -135,6 +135,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 8px;
+    height: 0px;
 }
 
 ::-webkit-scrollbar-track {

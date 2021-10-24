@@ -36,6 +36,16 @@ class RejectedOrders {
         </div>
         `;
     }
+
+    getCommentComponent(comment) {
+        return `
+            <div class="commentHolder">
+                <p class="commentText">${
+                    new Date(comment.date).toLocaleString("pt-BR").split(" ")[0]
+                } - ${comment.comment}</p>
+            </div>
+        `;
+    }
 }
 
 export default new RejectedOrders();
