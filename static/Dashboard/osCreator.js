@@ -41,10 +41,6 @@ class OsCreator {
         priceInput.value = "R$ 0,00";
     }
 
-    onNavigate() {
-        console.log(this);
-    }
-
     getAllClients() {
         return DB.getEntities("client", (n) => n);
     }
@@ -95,6 +91,7 @@ class OsCreator {
         DB.insertNew("os", {
             ...credentials,
             comments: [],
+            status: "open",
         });
         alert.showSuccess("OS cadastrada com sucesso!");
         this.clearForm();

@@ -62,8 +62,8 @@ class OsSearcher {
     }
 
     onNavigate() {
-        this.openOs = DB.getEntities("os", (os) => !os.submitionDate);
-        this.closedOs = DB.getEntities("os", (os) => os.submitionDate);
+        this.openOs = DB.getEntities("os", (os) => os.status === "open");
+        this.closedOs = DB.getEntities("os", (os) => os.status === "closed");
 
         osHolder.innerHTML = "";
         closedOsHolder.innerHTML = "";
@@ -115,12 +115,20 @@ class OsSearcher {
             buttons: [
                 {
                     name: "Não!",
-                    color: "red",
+                    color: "#A02",
                     onPress: () => finishPrompt.remove(),
                 },
                 {
-                    name: "Sim",
-                    color: "green",
+                    name: "Rejeitar",
+                    color: "#F06",
+                    onPress: () => {
+                        this.rejectOs(this.activeOs);
+                        finishPrompt.remove();
+                    },
+                },
+                {
+                    name: "Concluir",
+                    color: "#0F6",
                     onPress: () => {
                         this.finishOs(this.activeOs);
                         finishPrompt.remove();
@@ -171,6 +179,15 @@ class OsSearcher {
         DB.updateEntity("os", os.id, {
             ...os,
             status: "done",
+            submitionDate: new Date(),
+        });
+        this.onNavigate();
+    }
+
+    rejectOs(os) {
+        DB.updateEntity("os", os.id, {
+            ...os,
+            status: "rejected",
             submitionDate: new Date(),
         });
         this.onNavigate();

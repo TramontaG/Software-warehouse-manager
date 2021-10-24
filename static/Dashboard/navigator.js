@@ -1,7 +1,3 @@
-import Clients from "./clientsCreator";
-import OsCreator from "./osCreator";
-import OsSearcher from "./osSearcher";
-
 class Navigator {
     constructor() {
         this.routes = [];
@@ -38,7 +34,12 @@ class Navigator {
 const navigator = new Navigator();
 
 export const setupNavigation = () => {
-    navigator.registerRoutes(["consultarOs", "criarOs", "cadastrarCliente"]);
+    navigator.registerRoutes([
+        "consultarOs",
+        "criarOs",
+        "cadastrarCliente",
+        "rejectedOrders",
+    ]);
     navigator.navigate("consultarOs");
 
     consultaOs.addEventListener("click", () => {
@@ -51,6 +52,10 @@ export const setupNavigation = () => {
 
     cadastraCliente.addEventListener("click", () => {
         navigator.navigate("cadastrarCliente");
+    });
+
+    ordensRejeitadas.addEventListener("click", () => {
+        navigator.navigate("rejectedOrders");
     });
 };
 
