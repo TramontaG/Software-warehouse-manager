@@ -1,0 +1,67 @@
+.bodyWrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.bodyActive {
+    background: #0005;
+    backdrop-filter: blur(10px);
+}
+
+.promptContainer {
+    position: absolute;
+    top: -100vh;
+    background: white;
+    min-height: 20vh;
+    width: 75%;
+    padding: 2rem;
+    border-radius: 25px;
+    transition: top 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visiblePrompt {
+    top: 40vh;
+}
+
+.promptTitle {
+    text-align: center;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.promptButton {
+    all: unset;
+    padding: 0.75rem 2rem;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 3px 3px 5px 1px #000;
+    transform: translate(-2px, -2px);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.promptButton:hover {
+    background: #aaff;
+    box-shadow: 5px 5px 5px 1px #000;
+    transform: translate(-3px, -3px);
+}
+
+.promptButton:active {
+    box-shadow: none;
+    transform: translate(0, 0);
+}

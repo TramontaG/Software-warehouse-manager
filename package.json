@@ -1,0 +1,15 @@
+{
+  "name": "fabrica-de-software",
+  "version": "1.0.0",
+  "description": "Trabalho do Desire",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "parcel ./static/**/*.html",
+    "build": "parcel build ./static/**/*.html"
+  },
+
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./../GeneralCss/Alert.css">
+    <link rel="stylesheet" type="text/css" href="./../GeneralCss/prompt.css">
+
+
+    <script type="module" defer src="./index.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li id="consultaOs">Consultar OS</li>
+            <li id="criaOs">Criar OS</li>
+            <li id="cadastraCliente">Cadastrar Cliente</li>
+        </ul>
+    </div>
+
+    <div id="consultarOs" class="activePage">
+        <header class="header">Consultar Ordem de serviço</header>
+
+        <div class="osDisplaysContainer">
+            <div class="osDisplay">
+                <h1>Ordens em aberto</h1>
+                <section id="osHolder" class="osHolder">
+        
+                
+                </section>
+            </div>
+            <div class="osDisplay">
+                <h1>Ordens fechadas</h1>
+                <section id="closedOsHolder" class="osHolder">
+        
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="criarOs" class="activePage">
+        <header class="header">Criar ordem de serviço</header>
+        <section class="centerParent fullHeight">
+            <section class="formContainer">
+                <h1>Insira as informações da ordem de serviço</h1>
+                <form id="osForm" class="clientsForm">
+
+                    <datalist id="clientList"></datalist>
+
+                    <label class="label">Cliente</label>
+                    <input id="clientInput" type="search" list="clientList" class="textInput" autocomplete="off">
+
+                    <label class="label">Nome do serviço</label>
+                    <input class="textInput" id="osTypeInput" type="text">
+
+                    <label class="label">Descrição</label>
+                    <textarea class="textInput textArea"  id="descriptionInput"></textarea>
+
+                    <label class="label">Valor</label>
+                    <input class="textInput" id="priceInput" type="text">
+
+                    <input id="submitOs" class="submitButton" type="submit" value="Cadastrar OS">
+                </form>
+            </section>
+        </section>
+    </div>
+
+    <div id="cadastrarCliente" class="activePage">
+        <header class="header">Cadastrar Cliente</header>
+        <section class="centerParent fullHeight">
+            <section class="formContainer">
+                <h1>Insira as informações do cliente</h1>
+                <form id="clientsForm" class="clientsForm">
+
+                    <label class="label">Nome</label>
+                    <input id="nameInput" class="textInput" type="text">
+
+                    <label class="label">E-Mail</label>
+                    <input id="emailInput" class="textInput" type="email">
+
+                    <label class="label">Telefone</label>
+                    <input id="phoneInput" class="textInput" type="number">
+
+                    <input id="submitCliente" class="submitButton" type="submit" value="Cadastrar">
+                </form>
+            </section>        
+        </section>
+    </div>
+    
+</body>
+</html>
