@@ -4,6 +4,7 @@ const alert = new Alert({ showTime: 3 });
 
 class ClientsCreator {
     constructor() {
+        console.log(clientsForm);
         clientsForm.addEventListener("submit", (e) => {
             console.log(e);
             e.preventDefault();
