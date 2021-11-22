@@ -1,18 +1,12 @@
-import navigator, { setupNavigation } from "./navigator";
-import OsCreator from "./osCreator";
-import OsSearcher from "./osSearcher";
-import RejectedOrders from "./rejectedOrders";
-import ClientsCreator from "./clientsCreator";
+import navigator, { setupNavigation } from './navigator';
+import OsCreator from './osCreator';
+import OsSearcher from './osSearcher';
+import RejectedOrders from './rejectedOrders';
+import ClientsCreator from './clientsCreator';
+import ClientsManager from './clientManager';
 
-console.log(RejectedOrders.onNavigate);
+navigator.registerCallBack('consultarOs', OsSearcher.onNavigate.bind(OsSearcher));
+navigator.registerCallBack('rejectedOrders', RejectedOrders.onNavigate.bind(RejectedOrders));
+navigator.registerCallBack('maintainClients', ClientsManager.onNavigate.bind(ClientsManager));
 
-navigator.registerCallBack(
-    "consultarOs",
-    OsSearcher.onNavigate.bind(OsSearcher)
-);
-
-navigator.registerCallBack(
-    "rejectedOrders",
-    RejectedOrders.onNavigate.bind(RejectedOrders)
-);
 setupNavigation();

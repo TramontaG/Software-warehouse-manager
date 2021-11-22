@@ -19,6 +19,7 @@
             <li id="criaOs">Criar OS</li>
             <li id="cadastraCliente">Cadastrar Cliente</li>
             <li id="ordensRejeitadas">Ordens Rejeitadas</li>
+            <li id="gerenciarClientes">Gerenciar Clientes</li>
         </ul>
     </div>
 
@@ -27,18 +28,24 @@
 
         <div class="osDisplaysContainer">
             <div class="osDisplay">
-                <h1>Ordens em aberto</h1>
+                <h1>Ordens em aberto <span id="openTotal">R$123,45</span></h1>
+
                 <section id="osHolder" class="osHolder">
         
                 
                 </section>
             </div>
             <div class="osDisplay">
-                <h1>Ordens fechadas</h1>
+                <h1>Ordens fechadas <span id="closedTotal">R$123,45</span></h1>
                 <section id="closedOsHolder" class="osHolder">
         
                 </section>
             </div>
+        </div>
+
+        <div class="osSearchContainer">
+            <span class="searchTitle">Pesquisar por cliente</span>
+                <input type="text" class="searchInput" id="searchInput">
         </div>
     </div>
 
@@ -99,6 +106,45 @@
             
             </section>
             
+        </div>
+    </div>
+
+    <div class="activePage" id="maintainClients">
+        <header class="header">Manter Clientes</header>
+
+        <div class="clientsPageWrapper">
+            <div class="halfPage">
+                <h1>Clientes</h1>
+                <section id="clientsContainer"></section>
+
+            </div>
+
+            <div class="halfPage">
+                <h1>Dados do cliente</h1>
+                <section id="clientDataContainer">
+                    <form class="clientsForm formContainer">
+                        <label class="label">Nome</label>
+                        <input id="clientName" class="textInput disabled" type="text" disabled="disabled">
+    
+                        <label class="label">E-Mail</label>
+                        <input id="clientEmail" class="textInput" type="email">
+    
+                        <label class="label">Telefone</label>
+                        <input id="clientPhone" class="textInput" type="number">
+    
+                        <input id="submitClientChanges" class="submitButton" type="button" value="Atualizar">
+                        <input id="deleteCliente" class="submitButton" type="button" value="Deletar">
+
+                    </form>
+
+                </section>
+            </div>
+        </div>
+
+
+        <div class="osSearchContainer">
+            <span class="searchTitle">Pesquisar por cliente</span>
+            <input type="text" class="searchInput" id="clientSearchInput">
         </div>
     </div>
     
