@@ -5,7 +5,6 @@ const alert = new Alert({ showTime: 3 });
 class ClientsCreator {
 	constructor() {
 		clientsForm.addEventListener('submit', (e) => {
-			console.log(e);
 			e.preventDefault();
 			this.onSubmit();
 		});
@@ -16,7 +15,6 @@ class ClientsCreator {
 
 	onSubmit() {
 		const credentials = this.getFormData();
-		console.log(credentials);
 		if (!credentials.email || !credentials.name || !credentials.phone) return alert.showError('Preencha todos os campos');
 
 		DB.insertNew('client', credentials);

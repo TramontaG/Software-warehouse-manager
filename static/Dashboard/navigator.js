@@ -56,7 +56,7 @@ export const setupNavigation = () => {
 		navigator.navigate('maintainClients');
 	});
 
-	navigator.navigate('maintainClients');
+	navigator.navigate('consultarOs');
 };
 
 export default navigator;

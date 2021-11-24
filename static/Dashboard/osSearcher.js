@@ -184,7 +184,6 @@ class OsSearcher {
 	}
 
 	finishOs(os) {
-		console.log(os);
 		DB.updateEntity('os', os.id, {
 			...os,
 			status: 'done',
